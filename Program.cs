@@ -7,16 +7,23 @@ namespace TheSeventhProgram
         static void Main(string[] args)
         {
             Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            Console.WriteLine(FibonacciCalculation.CalculationFibonacciUsingTheRecursiveFunction(13));
-            stopwatch.Stop();
-            TimeSpan timeSpan1 = stopwatch.Elapsed;
-            Console.WriteLine("Время вычисления чисел Фибоначчи с помощью рекурсивной функции составило- " + timeSpan1);
-            stopwatch.Restart();
-            Console.WriteLine(FibonacciCalculation.CalculationFibonacciUsingTheCyclicMethod(13));
-            stopwatch.Stop();
-            TimeSpan timeSpan2 = stopwatch.Elapsed;
-            Console.WriteLine("Время вычисления чисел Фибоначчи с помощью циклов составило- " + timeSpan2);
+            string stringOfUsingTheRecursiveFunction = "Время вычисления чисел Фибоначчи с помощью рекурсивной функции составило - ";
+            string stringOfUsingTheCyclicMethod = "Время вычисления чисел Фибоначчи с помощью циклов составило- ";
+            string numberOfFibonacci = "Число Фибоначчи от ";
+            int[] numbers = { 5, 10, 20 };
+            for (int i = 0; i < 3; i++)
+            {
+                stopwatch.Start();
+                Console.WriteLine(numberOfFibonacci + numbers[i] + " : " + FibonacciCalculation.CalculationFibonacciUsingTheRecursiveFunction(numbers[i]));
+                stopwatch.Stop();
+                TimeSpan timeSpan1 = stopwatch.Elapsed;
+                Console.WriteLine(stringOfUsingTheRecursiveFunction + timeSpan1);
+                stopwatch.Restart();
+                FibonacciCalculation.CalculationFibonacciUsingTheCyclicMethod(numbers[i]);
+                stopwatch.Stop();
+                TimeSpan timeSpan2 = stopwatch.Elapsed;
+                Console.WriteLine(stringOfUsingTheCyclicMethod + timeSpan2);
+            }
         }
     }
 }
