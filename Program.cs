@@ -11,12 +11,12 @@ namespace TheSeventhProgram
             Console.WriteLine(FibonacciCalculation.CalculationFibonacciUsingTheRecursiveFunction(13));
             stopwatch.Stop();
             TimeSpan timeSpan1 = stopwatch.Elapsed;
-            Console.WriteLine("Время работы вычисления чисел Фибоначчи с помощью рекурсивной функции составило- " + timeSpan1);
+            Console.WriteLine("Время вычисления чисел Фибоначчи с помощью рекурсивной функции составило- " + timeSpan1);
             stopwatch.Restart();
             Console.WriteLine(FibonacciCalculation.CalculationFibonacciUsingTheCyclicMethod(13));
             stopwatch.Stop();
             TimeSpan timeSpan2 = stopwatch.Elapsed;
-            Console.WriteLine("Время работы вычисления чисел Фибоначчи с помощью циклов составило- " + timeSpan2);
+            Console.WriteLine("Время вычисления чисел Фибоначчи с помощью циклов составило- " + timeSpan2);
         }
     }
 }
